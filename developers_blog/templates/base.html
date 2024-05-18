@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A developers diary</title>
+</head>
+<header>
+    {% include "navbar.html" %}
+</header>
+
+<body>
+    <h1>INCLUDE A NAVBAR HERE!</h1>
+    {% block content %}
+    {% endblock%}
+</body>
+
+
+<footer>
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+    <nav>
+        <ul>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="#top">Back to Top</a></li>
+        </ul>
+    </nav>
+</footer>
+
+</html>
