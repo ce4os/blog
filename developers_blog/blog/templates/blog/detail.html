@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% load markdown_to_html_filter %}
+
+{% block content %}
+
+<div>
+    <h1>{{post.title}}</h1>
+    <p>{{post.body|render_markdown_to_html}}</p>
+</div>
+
+{% endblock %}

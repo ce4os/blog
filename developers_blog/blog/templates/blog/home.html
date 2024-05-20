@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+
+
+    {% for post in queryset %}
+   
+
+    <div>
+        <div>{{post.published_at|date:"D M d Y"}} - </div>
+        <a href="{% url 'detail' post.id %}">{{post.title}}</a>
+        <p>{{post.abstract}}</p>
+    </div>
+    
+    {% endfor %}
+
+
+
+{% endblock %}

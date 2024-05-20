@@ -1,0 +1,102 @@
+## Mon May 20 11:27:20 AM CEST 2024
+
+### Abstract
+
+I want to document the steps I take to develop
+this blog of mine. 
+
+### Django dotenv - a simple way to secure your secrets
+
+Create .env
+Move sensible data like the SECRET_KEY, database parameters etc. to .env
+as key value pairs:
+
+SECRET_KEY=b0a0c6224e15b37867c6ba686730d49b 
+NAME=db2
+USER=postgres
+etc.
+
+You can import this data like this:
+
+```python
+import os
+import dotenv
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+dotenv_path = BASE_DIR / ".env"
+dotenv.read_dotenv(dotenv_path)
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+```
+
+### Creating base.html
+
+The why:
+Reduce redundancy in my codebase. Some things
+reappear in all of my views. This would be
+the navbar, the footer and the header. To avoid
+having to write all the code (or cp and paste it)
+I create one single base.html that all other templates inherit from. A barebone version will look like this:
+
+```
+
+```
+Step 1:
+
+Create templates/ directory in BASE_DIR of the project. 
+
+Step 2
+Change settings.py
+
+template_base = BASE_DIR / "templates"
+TEMPLATES = [
+    {
+        ...
+        "DIRS": [template_base],
+    ...
+    },
+]
+
+Step 3
+create templates/base.html
+
+### django-taggit
+
+Why? It would be nice to label or tag blogentries.
+
+Step 1: Install django-taggit
+
+```sh
+pip install django-taggit
+```
+
+Step 2: Register taggit to Django project
+
+```
+INSTALLED_APPS = [
+    ...
+    'taggit',
+    ...
+]
+```
+
+Step 3: Update database
+
+```
+python3 mangage.py migrate
+```
+
+Step 4: Add TaggableManager to my Blog model
+
+```python 
+from django.db import models
+from taggit.managers import TaggableManager
+
+class Blog(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    tags = TaggableManager()
+    def __str__(self):
+        return self.title
+```
