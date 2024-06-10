@@ -1,0 +1,107 @@
+/*--this code here tells you, what the main content(body) should do, everything will derive from here) --/
+/-- the margin controlls how war from the edge of your website the Items should be, we set it to 0, as we can control it inside the item itself later --*/
+* {
+    font-family: Lato;
+}
+
+body {
+    margin: 0;  /*you can choose whatever font you like */
+}
+    /*-- now we call on the first class that we named, the navbar --*/
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+#blogpost-title {
+    display: flex;
+    text-align: left;
+}
+
+
+/* Navigation bar */
+.navbar{
+    display: flex;  /*this creates a flex box, we can from here control what happens inside of this box, remember, each div are simply containers for the items inside*/
+    justify-content: space between; /* how far from each other each element will be */
+    align-items: center;  /* we are forcing all the items inside of this navbar to be centered, this way we can control later per item where they should be */
+    background-color: #0d2b75; /* change this to your liking */
+    padding: 10px 20px;  /* first px is how far from left to right it should be, second one is how far from top to bottom it should be */
+}
+    /* brand is your log on the left side */
+.logo {
+    color: white; /* decides the color of the text */
+    font-weight: 1000; /* decides the bold of the text */
+    font-size: 1.5em; /* decides the size of the text, now this one is harder. we have px = pixels, we have rem, which multiplies with the rood. So if you have 16px root, it's going to be 16x2 and em which should be inbetween */
+}
+
+.abstract {
+    color:#357ec7;
+    font-size:smaller;
+}
+    /* nav items are the items inside of a navbar, like, home, project, contact about and so on */
+.nav-items {
+    list-style-type: none;  /* this removes the decorater, like the points behind the links, or underscore and so on, we can also use a text-decorater:none; which does the same thing */
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+    /* now we use nav-items li because in your html code, you have them as a list, and the shortcut is li */
+.nav-items li {
+    margin-left: 20px;
+    color:#ced4da;
+}
+    /* and because they are a, " a href " type, we can control their colors and style here */
+.nav-items a {
+    color: #ced4da;
+    text-decoration: none;  /* removes the bullet points */
+    font-size: 1em;
+    transition: color 0.3s ease; /* we are calling on an animation to shift when hoovered over */
+}
+    /* here is the hover link that we call for on top */
+.nav-items a:hover {
+    color: #357ec7;
+} 
+
+.nav-items a.active {
+    color: #357ec7
+}
+
+
+
+/* Searchbar */
+.search {
+    background-color: #357ec7;
+    padding: 10px;
+}
+
+.search input[type="text"] {
+    width: 20%;
+    margin: 5px 0;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: rgb(33, 31, 31);
+    color: #ced4da;
+    outline: #357ec7
+    
+}
+
+.search button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.search button:hover {
+    background-color: #0056b3;
+}
+
+/* Change the outline color on focus */
+/* Change the outline color on focus */
+.search input[type="text"]:focus {
+    border-color: #357ec7; /* Blue border color on focus */
+}

@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+.navbar {
+    display: flex;
+    outline: 3px solid rgb(46, 46, 148);
+    /* background-color: rgb(46, 46, 148); */
+    padding-left: 25px;
+}
+
+.searchbar {
+    display: flex;
+    outline: 3px solid rgb(84, 84, 224);
+    margin: 0px;
+    padding: 10px;
+    /* background-color: rgb(84, 84, 224); */
+}
+
+.blogpost {
+    display: flex;
+    margin: 0px;
+    outline: black;
+    /* background-color: black; */
+}

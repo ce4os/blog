@@ -18,3 +18,9 @@ def detail_view(request, post_id):
 
 def about_view(request):
     return render(request, "about.html")
+
+def imprint_view(request):
+    return render(request, "imprint.html")
+
+def privacy_policy_view(request):
+    return render(request, "privacy_policy.html")

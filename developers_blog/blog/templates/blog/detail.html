@@ -4,9 +4,9 @@
 
 {% block content %}
 
-<div>
-    <h1>{{post.title}}</h1>
-    <p>{{post.body|render_markdown_to_html}}</p>
+<div class="content">
+    <div id="blogpost-title"><h1 >{{post.title}}</h1></div>
+    <div><p>{{post.body|render_markdown_to_html}}</p></div>
 </div>
 
 {% endblock %}

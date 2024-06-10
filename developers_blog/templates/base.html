@@ -1,41 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A developers diary</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <title>{% block title %}A developers diary{% endblock %}</title> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans|Lato|Montserrat|Merriweather">
+    <link rel="stylesheet" href="{% static 'global.css' %}">
 </head>
 <header>
-    <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li> 
-            <li><a href="#">All posts</a></li> 
-            <li><a href="#">Topics</a></li> 
-            <li><a href="{% url 'about' %}">About</a></li> 
-        </ul>
-    </nav>
+    {% include 'navbar.html' %}
+    {% include 'searchbar.html' %}
 </header>
 
 <body>
-    <h2>[INCLUDE A NAVBAR HERE!]</h2>
     
+    <hr>
+    <div class="content"></div>
     {% block content %}
-    {% endblock%}
+    
 
+    
+    {% endblock%}
+    </div>
+    <hr>
+
+    
 </body>
 
-
 <footer>
-    <p>&copy; 2024 My Website. All rights reserved.</p>
-    <nav>
-        <ul>
-            <li><a href="/terms">Terms of Service</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="#top">Back to Top</a></li>
-        </ul>
-    </nav>
+    {% include 'footer.html' %}
 </footer>
 
 </html>
