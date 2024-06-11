@@ -7,14 +7,14 @@
 body {
     margin: 0;  /*you can choose whatever font you like */
 }
-    /*-- now we call on the first class that we named, the navbar --*/
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: aquamarine;
+    background-color: rgb(40, 44, 42);
+    color: #ced4da;
 }
 
 #blogpost-title {
@@ -66,7 +66,7 @@ body {
     color: #357ec7;
 } 
 
-.nav-items a.active {
+.nav-items a.tester {
     color: #357ec7
 }
 
@@ -78,7 +78,7 @@ body {
     padding: 10px;
 }
 
-.search input[type="text"] {
+.search input[type="search"] {
     width: 20%;
     margin: 5px 0;
     border: 1px solid #ced4da;
@@ -86,7 +86,6 @@ body {
     background-color: rgb(33, 31, 31);
     color: #ced4da;
     outline: #357ec7
-    
 }
 
 .search button {
@@ -101,7 +100,65 @@ body {
 }
 
 /* Change the outline color on focus */
-/* Change the outline color on focus */
 .search input[type="text"]:focus {
     border-color: #357ec7; /* Blue border color on focus */
+}
+
+
+/* Footers */
+
+.footer1 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #357ec7;
+    color:#ced4da;
+    text-align: center;
+}
+
+.footer1 a {
+    color: #ced4da;
+    text-decoration: none;  /* removes the bullet points */
+    font-size: 1em;
+    transition: color 0.3s ease; /* we are calling on an animation to shift when hoovered over */
+}
+    /* here is the hover link that we call for on top */
+.footer1 a:hover {
+    color: #357ec7;
+} 
+
+.footer1 a:active {
+    color: #357ec7
+}
+
+
+
+.footer2 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #0d2b75;
+    color:#ced4da;
+    text-align: center;
+}
+
+.footer2 a {
+    color: #ced4da;
+    text-decoration: none;  /* removes the bullet points */
+    font-size: 1em;
+    transition: color 0.3s ease; /* we are calling on an animation to shift when hoovered over */
+}
+    /* here is the hover link that we call for on top */
+.footer2 a:hover {
+    color: #357ec7;
+} 
+
+.footer2 a:active {
+    color: #357ec7
+}
+
+.tester {
+    color: red;
 }
